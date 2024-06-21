@@ -1,0 +1,19 @@
+.product-add-form{
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.product-add-form label{
+    font-weight: 700;
+}
+
+.product-add-form input{
+    background-color: #f0f4ff;
+    outline: none;
+    padding: 6px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+

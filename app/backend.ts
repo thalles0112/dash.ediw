@@ -1,0 +1,1 @@
+export const backend = 'https://veddiw.pythonanywhere.com'
