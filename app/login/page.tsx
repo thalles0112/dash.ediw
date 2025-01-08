@@ -45,8 +45,12 @@ export default function Login(){
         register({username:credentials.username, email:credentials.email, password:credentials.password}).then(
             resp => {
                 if(resp.token){
-                setAuthCookie({'token':resp.token, 'username':resp.user.username, expires:Date.now()+oneDay});
-                window.location.href = '/'
+                setAuthCookie({'token':resp.token, 'username':resp.user.username, expires:Date.now()+oneDay}).then(()=>{
+                    window.location.reload()
+                    window.location.href = '/'
+                }
+                );
+                
                 }
                 else{
                     window.alert(resp.status)
@@ -60,8 +64,11 @@ export default function Login(){
         
         auth({username:credentials.email, password:credentials.password}).then(
             resp => {
-                setAuthCookie({'token':resp.token, 'username':resp.user.username, 'expires':Date.now()+oneDay,  'currentSite':resp.sites[0]}); 
-                window.location.href = '/'}
+                setAuthCookie({'token':resp.token, 'username':resp.user.username, 'expires':Date.now()+oneDay,  'currentSite':resp.sites[0]}).then(()=>{
+                    window.location.reload()
+                    window.location.href = '/'
+                }); 
+                }
         )
     }
    }
